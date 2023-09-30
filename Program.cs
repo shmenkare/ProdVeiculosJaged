@@ -8,8 +8,8 @@ namespace ProdVeiculosJaged
     {
         static void Main(string[] args)
         {
-            int i = 0, j = 0, costoDia = 0, vehicprod = 0, totDias = 20, cantMay = 0, cantMen = 100;
-            float sum = 1.0f, prom = 1.0f;
+            int i = 0, j = 0, costoDia = 0, vehicprod = 0, vehicTot = 0, cantMay = 0, cantMen = 100;
+            float sum = 0.0f, prom = 1.0f;
 
             int[][] CostoDiario = new int[5][];
 
@@ -19,7 +19,7 @@ namespace ProdVeiculosJaged
                 Console.WriteLine("Cantidad de vehiculos producidos en el dia {0} ", i);
                 vehicprod = Convert.ToInt32(Console.ReadLine());
                 CostoDiario[i] = new int[vehicprod];
-
+                vehicTot += vehicprod;
                 for (j = 0; j < CostoDiario[i].Length; j++)
                 {
                     Console.WriteLine("Costo del vehiculo {1} producido en el dia {0} ", i, j);
@@ -41,7 +41,8 @@ namespace ProdVeiculosJaged
                 }
                 Console.WriteLine();
             }
-            prom = sum / totDias;
+            Console.WriteLine("Suma es {0} y vehicTot es {1} ", sum, vehicTot);
+            prom = sum / vehicTot;
 
             Console.WriteLine("El promedio de costos es {0} ", prom);
             for (i = 0; i < CostoDiario.Length; i++)

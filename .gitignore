@@ -1,0 +1,9 @@
+ProdVeiculosJaged.csproj
+ProdVeiculosJaged.sln
+ProdVeiculosJaged.suo
+.gitattributes
+Properties/
+bin/
+obj/
+App.config
+.vs/

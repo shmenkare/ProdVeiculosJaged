@@ -45,6 +45,7 @@ namespace ProdVeiculosJaged
             prom = sum / vehicTot;
 
             Console.WriteLine("El promedio de costos es {0} ", prom);
+            
             for (i = 0; i < CostoDiario.Length; i++)
             {
                 for (j = 0; j < CostoDiario[i].Length; j++)

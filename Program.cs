@@ -36,7 +36,7 @@ namespace ProdVeiculosJaged
                 for (j = 0; j < CostoDiario[i].Length; j++)
                 {
                     Thread.Sleep(100);
-                    Console.Write(CostoDiario[i][j]);
+                    Console.Write(CostoDiario[i][j]+" ");
 
                 }
                 Console.WriteLine();

@@ -30,47 +30,73 @@ namespace ProdVeiculosJaged
                 }
                 Console.Clear();
             }
+
+            Mostartabla(CostoDiario);
+            
+            Console.WriteLine("Suma es {0} y vehicTot es {1} ", sum, vehicTot);
+            
+            prom = Promedio(sum, vehicTot);
+            Console.WriteLine("El promedio de costos es {0} ", prom);
+
+            cantMen = Menor(CostoDiario, cantMen);
+            cantMay = Mayor(CostoDiario, cantMay);
+
+            Console.WriteLine("La menor costo es {0} ", cantMen);
+            Console.WriteLine("La mayor costo es {0} ", cantMay);
+            
+            Console.ReadKey();
+        }
+        static void Mostartabla(int [][] Array) 
+        {
+            int i = 0, j = 0;
             Console.WriteLine("Mostrando tabla");
-            for (i = 0; i < CostoDiario.Length; i++)
+            for (i = 0; i < Array.Length; i++)
             {
-                for (j = 0; j < CostoDiario[i].Length; j++)
+                for (j = 0; j < Array[i].Length; j++)
                 {
                     Thread.Sleep(100);
-                    Console.Write(CostoDiario[i][j]+" ");
+                    Console.Write(Array[i][j] + " ");
 
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("Suma es {0} y vehicTot es {1} ", sum, vehicTot);
-            prom = sum / vehicTot;
-
-            Console.WriteLine("El promedio de costos es {0} ", prom);
-            for (i = 0; i < CostoDiario.Length; i++)
-            {
-                for (j = 0; j < CostoDiario[i].Length; j++)
-                {
-                    if (CostoDiario[i][j] < cantMen)
-                    {
-                        cantMen = CostoDiario[i][j];
-                    }
-                }
-
-            }
-            for (i = 0; i < CostoDiario.Length; i++)
-            {
-                for (j = 0; j < CostoDiario[i].Length; j++)
-                {
-                    if (CostoDiario[i][j] > cantMay)
-                    {
-                        cantMay = CostoDiario[i][j];
-                    }
-                }
-
-            }
-            Console.WriteLine("La menor costo es {0} ", cantMen);
-            Console.WriteLine("La mayor costo es {0} ", cantMay);
-            Console.ReadKey();
         }
+        static float Promedio(float a, float b) 
+        {
+            float res = a / b;
+            return res;
+        }
+        static int Menor(int[][] Array, int valor) 
+        {
+            int i = 0, j = 0;
+            for (i = 0; i < Array.Length; i++)
+            {
+                for (j = 0; j < Array[i].Length; j++)
+                {
+                    if (Array[i][j] < valor)
+                    {
+                        valor = Array[i][j];
+                    }
+                }
+            }
+            return valor;
+        }
+        static int Mayor(int[][] Array, int valor)
+        {
+            int i = 0, j = 0;
+            for (i = 0; i < Array.Length; i++)
+            {
+                for (j = 0; j < Array[i].Length; j++)
+                {
+                    if (Array[i][j] > valor)
+                    {
+                        valor = Array[i][j];
+                    }
+                }
+            }
+            return valor;
+        }
+
 
     }
 }

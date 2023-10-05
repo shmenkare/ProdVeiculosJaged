@@ -8,6 +8,8 @@ namespace ProdVeiculosJaged
     {
         static void Main(string[] args)
         {
+            //V2.0 con funciones agragadas.
+
             int i = 0, j = 0, costoDia = 0, vehicprod = 0, vehicTot = 0, cantMay = 0, cantMen = 100;
             float sum = 0.0f, prom = 1.0f;
 
